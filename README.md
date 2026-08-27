@@ -13,7 +13,8 @@
 > 
 > **Fecha:** Agosto de 2026
 > 
-> **Importante:** Parte de código fue creado con ayuda
+> **Importante:** Parte de código fue creado con ayuda de la IA
+> **IMPORTANTE:** SE RECOMIENDA DESCARGAR EL ARCHIVO PARA VER LA INTERFAZ
 
 
 ## Presentación del problema:
