@@ -14,7 +14,10 @@
 > **Fecha:** Agosto de 2026
 > 
 > **Importante:** Parte de código fue creado con ayuda de la IA
+>
 > **IMPORTANTE:** SE RECOMIENDA DESCARGAR EL ARCHIVO PARA VER LA INTERFAZ
+>
+>**IMPORTANTE:** Mirar la carpeta assets para ver como s ve la interfaz, visualizar los resultados obtenidos, la foto original de la prenda que se subió en un inicio
 
 
 ## Presentación del problema:
