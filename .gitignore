@@ -1,0 +1,21 @@
+# Variables de entorno y credenciales
+.env
+*.env
+
+# Configuracion local de editor
+.vscode/
+
+# Cache de Python y entornos virtuales
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+env/
+
+# Cache de Jupyter Notebooks
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Archivos temporales de sistema operativo
+.DS_Store
+Thumbs.db
