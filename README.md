@@ -17,7 +17,7 @@
 >
 > **IMPORTANTE:** SE RECOMIENDA DESCARGAR EL ARCHIVO PARA VER LA INTERFAZ
 >
->**IMPORTANTE:** Mirar la carpeta assets para ver como s ve la interfaz, visualizar los resultados obtenidos, la foto original de la prenda que se subió en un inicio
+>**IMPORTANTE:** Mirar la carpeta assets para ver como se ve la interfaz, visualizar los resultados obtenidos y ver la foto original de la prenda que se subió en un inicio
 
 
 ## Presentación del problema:
