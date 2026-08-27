@@ -13,7 +13,7 @@
 > 
 > **Fecha:** Agosto de 2026
 > 
-> 
+> **Importante:** Parte de código fue creado con ayuda de la IA
 
 ---
 
