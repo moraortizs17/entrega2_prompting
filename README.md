@@ -13,9 +13,8 @@
 > 
 > **Fecha:** Agosto de 2026
 > 
-> **Importante:** Parte de código fue creado con ayuda de la IA
+> **Importante:** Parte de código fue creado con ayuda
 
----
 
 ## Presentación del problema:
 
@@ -39,7 +38,6 @@ Al momento de sacar una nueva colección o actualizar los productos en tienda we
 
 Resolver este problema puede ser un gran alivio para aquellos emprendedores pequeños que no cuentan con recursos suficientes para pagar un estudio de fotografía completo con todos los accesorios. De esta manera, usando herramientas de IA de texto e imágenes, podemos lograr resultados de alta calidad que permita crear catálogos estándar, con buenos fondos, un gran impacto visual e incluso llegar a la personalización para cada cliente.
 
----
 
 ## Desarrollo de la Propuesta de Solución
 
@@ -158,7 +156,7 @@ Para ejecutar este meta-prompting, se aplican las siguientes técnicas:
 
 
 
----
+
 
 ### Componente texto-imagen (generación visual)
 
@@ -180,7 +178,7 @@ Editorial streetwear lifestyle photography of a young man wearing an oversized o
 
 ```
 
----
+
 
 ## Justificación de la viabilidad del proyecto
 
@@ -192,7 +190,7 @@ Asimismo, el tiempo de ejecución podría tomar alrededor de 2 minutos por produ
 
 Por último; sobre los costos, usamos en este caso la suscripción de Google AI Pro para facilitar algunos aspectos como la creación de imágenes con mayor calidad usando NanoBanana Pro, aumentar los límites de uso y usar por más tiempo los modelos más potentes de Google.
 
----
+
 
 ## Identificación de limitaciones
 
@@ -215,7 +213,7 @@ Por último; sobre los costos, usamos en este caso la suscripción de Google AI 
 
 
 
----
+
 
 ## Objetivos
 
@@ -241,7 +239,7 @@ Desarrollar una prueba de concepto (POC) en un Jupyter Notebook que demuestre la
 
 
 
----
+
 
 ## Metodología
 
@@ -279,7 +277,7 @@ Evaluamos las imágenes y los textos para ver que cumplan con la estética esper
 
 
 
----
+
 
 ## 4. Herramientas y Tecnologías
 
@@ -316,7 +314,7 @@ Evaluamos las imágenes y los textos para ver que cumplan con la estética esper
 
 
 
----
+
 
 ## Implementación:
 
@@ -324,7 +322,7 @@ Evaluamos las imágenes y los textos para ver que cumplan con la estética esper
 
 La implementación con la explicación se encuentra en el archivo `entrega2_fast_prompting.ipynb`.
 
----
+
 
 ## Conclusión:
 
