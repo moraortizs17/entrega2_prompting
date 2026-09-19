@@ -337,7 +337,10 @@ El sistema redactó una descripción persuasiva y técnica orientada a plataform
 
 Para la línea de producto de catálogo, se utilizó el meta-prompt derivado en inglés enfocado en iluminación difusa y fidelidad textil en estudio:
 
-_Commercial studio fashion photography of a young athletic man with short wavy hair and a neutral, modern expression, wearing a classic medium-dark indigo wash denim trucker jacket with contrast tobacco stitching and silver metal shank buttons. Seamless pure white background (#FFFFFF), professional three-point softbox lighting, even diffused light without harsh shadows. Shot with an 85mm telephoto portrait lens, f/8 aperture, pin-sharp textile weave and stitch details, clean commercial lookbook style --ar 4:5_
+´´´text
+Commercial studio fashion photography of a young athletic man with short wavy hair and a neutral, modern expression, wearing a classic medium-dark indigo wash denim trucker jacket with contrast tobacco stitching and silver metal shank buttons. Seamless pure white background (#FFFFFF), professional three-point softbox lighting, even diffused light without harsh shadows. Shot with an 85mm telephoto portrait lens, f/8 aperture, pin-sharp textile weave and stitch details, clean commercial lookbook style --ar 4:5
+
+´´´
 
 **Resultado de la imagen:** En el imagen resultante se observa una traslación visual exacta de las directrices del prompt. El modelo viste la chaqueta manteniendo las proporciones, textura y caídas de la prenda. La iluminación de tres puntos y el fondo blanco cumplen con las instrucciones visuales y las normas de los catálogos digitales de alta gama, permitiendo apreciar el grosor del tejido sin sombras duras ni artefactos visuales.
 
