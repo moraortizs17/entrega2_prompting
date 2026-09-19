@@ -348,7 +348,10 @@ Commercial studio fashion photography of a young athletic man with short wavy ha
 
 Para la vertiente publicitaria, el meta-prompt situó la misma chaqueta en un entorno arquitectónico contemporáneo con luz de tarde lluviosa:
 
-_Editorial lifestyle fashion photography of a young athletic man with short wavy hair and a neutral expression, wearing a classic medium-dark indigo wash denim trucker jacket. The model is standing on a wet pedestrian walkway in front of a modern concrete museum with large glass windows after a light rain. Reflections on the damp pavement, natural overcast afternoon light, soft diffused daylight. Shot with a 50mm lens, f/2.8, cinematic composition, realistic denim texture, candid posture --ar 16:9_
+```text
+Editorial lifestyle fashion photography of a young athletic man with short wavy hair and a neutral expression, wearing a classic medium-dark indigo wash denim trucker jacket. The model is standing on a wet pedestrian walkway in front of a modern concrete museum with large glass windows after a light rain. Reflections on the damp pavement, natural overcast afternoon light, soft diffused daylight. Shot with a 50mm lens, f/2.8, cinematic composition, realistic denim texture, candid posture --ar 16:9
+
+```
 
 La imagen final reproduce la textura del hormigón del museo, los ventanales y los reflejos del pavimento mojado. La luz natural interactúa de forma realista con el denim de la chaqueta, logrando una buena estética de forma orgánica.
 
