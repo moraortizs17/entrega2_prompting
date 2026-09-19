@@ -11,13 +11,19 @@
 > **Autor:** Santiago Mora Ortiz
 > 
 > 
-> **Fecha:** Agosto de 2026
+> **Fecha:** Septiembre de 2026
 > 
 > **Importante:** Parte de código fue creado con ayuda de la IA
 >
 > **IMPORTANTE:** SE RECOMIENDA DESCARGAR EL ARCHIVO PARA VER LA INTERFAZ
 >
 >**IMPORTANTE:** Mirar la carpeta assets para ver como se ve la interfaz, visualizar los resultados obtenidos y ver la foto original de la prenda que se subió en un inicio
+
+## Resumen:
+
+Este proyecto desarrolla una prueba de concepto orientada a eliminar las barreras económicas y operativas de las pequeñas empresas de moda, las cuales compiten en un mercado saturado donde la calidad del catálogo digital suele ser determinante para captar al consumidor. La solución propuesta integra modelos multimodales (texto a texto y texto a imagen) combinados con técnicas de prompt engineering como Zero shot, One shot, Few shot y Meta prompting, permitiendo abaratar, automatizar y optimizar la producción visual para aquellas marcas emergentes que no cuentan con el presupuesto necesario para costear sesiones fotográficas tradicionales ni modelos profesionales.
+
+El flujo de trabajo consiste en ingresar la imagen de una prenda al modelo de lenguaje para que este analice minuciosamente sus acabados, corte y texturas textiles. En una única consulta optimizada y sin incurrir en gasto innecesario de tokens o iteraciones repetitivas, el sistema genera simultáneamente la ficha comercial persuasiva en español y dos meta-prompts técnicos estructurados en inglés (uno para fotografía de catálogo en estudio y otro para campañas editoriales urbanas), los cuales sirven como instrucción directa para una herramienta de IA generativa de imágenes que entrega los activos finales listos para su publicación digital.
 
 
 ## Presentación del problema:
@@ -43,8 +49,135 @@ Al momento de sacar una nueva colección o actualizar los productos en tienda we
 Resolver este problema puede ser un gran alivio para aquellos emprendedores pequeños que no cuentan con recursos suficientes para pagar un estudio de fotografía completo con todos los accesorios. De esta manera, usando herramientas de IA de texto e imágenes, podemos lograr resultados de alta calidad que permita crear catálogos estándar, con buenos fondos, un gran impacto visual e incluso llegar a la personalización para cada cliente.
 
 
-## Desarrollo de la Propuesta de Solución
+## Objetivos
 
+
+
+### Objetivo General
+
+
+
+Desarrollar una prueba de concepto (POC) en un Jupyter Notebook que demuestre la viabilidad técnica y operativa de automatizar la creación de catálogos comerciales y campañas visuales para marcas de moda emergentes, integrando técnicas como Role Prompting, One/Few-Shot y Meta-Prompting con modelos multimodales (texto-texto y texto-imagen) de forma eficiente y de bajo costo.
+
+### Objetivos específicos
+
+
+
+* **Experimentar y comparar técnicas de prompting:** Evaluar el desempeño entre zero-prompt, one-shot y few-shot prompting para la redacción de fichas comerciales y la construcción de meta-prompts fotográficos.
+
+
+* **Optimizar el consumo de recursos y llamadas a la API:** Diseñar una estructura de prompt que resuelva en una sola consulta la ficha descriptiva y los dos prompts de imagen (catálogo de estudio y campaña editorial), reduciendo el gasto de tokens.
+
+
+* **Validar la integración multimodal:** Documentar los resultados visuales obtenidos a partir de los meta-prompts en el motor de imagen, comprobando los detalles de los productos en la imagen como la caída del textil, la iluminación, el ambiente, etc.
+
+
+
+
+
+## Metodología
+
+
+
+El proyecto se desarrollará a través de cuatro etapas:
+
+* **Etapa 1: Recopilación y organización de los datos de la prenda**
+
+Se definen los datos clave que describen el producto como el tipo de prenda, composición, color, estilo visual de la marca, etc.
+
+
+* **Etapa 2: Pruebas y generación con el modelo de texto**
+
+Se estructura el entorno de trabajo en Python dentro del Jupyter Notebook.
+
+
+Configuramos el modelo de lenguaje asignándole el rol de director de arte.
+
+
+Hacemos pruebas comparando los tipos de prompts como Zero-Shot, One-Shot y Few-Shot con el fin de identificar cuál obtiene mayor precisión en el texto comercial y los prompts de fotografía en inglés (iluminación, tipo de plano).
+
+
+* **Etapa 3: Creación de las imágenes con la IA visual**
+
+Los prompts obtenidos del modelo de texto se introducen en la herramienta de generación de imágenes (en este caso de Nano Banana).
+
+
+Obtenemos dos resultados visuales: la foto limpia de catálogo con fondo blanco y la foto editorial ambientada en la calle.
+
+
+* **Etapa 4: Revisión de calidad, tiempos y costos**
+
+Evaluamos las imágenes y los textos para ver que cumplan con la estética esperada, midiendo también el tiempo total y el consumo de consultas y tokens para estar seguros de que el proceso es rentable y más eficiente para la empresa pequeña.
+
+
+
+
+
+## 4. Herramientas y Tecnologías
+
+
+
+### Técnicas de Prompting Utilizadas y su Justificación
+
+
+
+* **Role Prompting:** Le asignamos a la IA el rol de director de arte y especialista en prompts para moda. Esto ayuda a que el modelo se ponga en contexto y utilice un tono llamativo para vender la prenda usando los términos adecuados de fotografía (como tipos de lentes, luces y texturas de la tela).
+
+
+* **Meta-Prompting:** La IA de texto no solo escribe la descripción de la prenda, sino que crea el prompt detallado en inglés que necesita la IA de imagen para hacer las fotos. De esta manera, el usuario no tiene que inventar configuraciones de cámara complejas, ya que el modelo las crea automáticamente.
+
+
+* **Zero-Shot Prompting:** Consiste en pedirle al modelo que genere la ficha y los prompts de imagen dándole únicamente las instrucciones y los datos de la prenda, sin mostrarle ningún ejemplo. Esto sirve para conocer la capacidad de la IA y ver qué tan bien responde.
+
+
+* **One-Shot y Few-Shot Prompting:** Aquí le mostramos a la IA uno o varios ejemplos resueltos del mismo mensaje. Al ver un ejemplo de cómo debe quedar el texto y los prompts, el modelo entiende mejor el formato que esperamos y comete menos errores.
+
+
+
+### Herramientas y Programas Utilizados
+
+
+
+* **Python y Jupyter Notebook:** Es el entorno donde organizamos todo el proyecto. Permite mezclar explicaciones escritas, bloques de código que se pueden ejecutar y las imágenes generadas para que cualquier persona pueda revisar el funcionamiento paso a paso.
+
+
+* **Gemini 3.5 flash lite, Gemini 3.7 flash y 3.1 pro:** Son los modelos de texto que procesan la información de la prenda, redactan la ficha comercial y arman los prompts fotográficos en inglés de manera rápida.
+
+
+* **Google Nano Banana:** Es la herramienta visual que toma los textos en inglés generados por el modelo de lenguaje y crea las imágenes finales entregando la foto limpia de catálogo con fondo blanco y la foto de campaña en la calle.
+
+
+## Justificación de la viabilidad del proyecto
+
+
+
+Con las herramientas con las que se cuentan actualmente se puede crear un primer MCP que más adelante pueda evolucionar a una app completa si se quisiera.
+
+Asimismo, el tiempo de ejecución podría tomar alrededor de 2 minutos por producto y por cada ficha y no se necesitaría de una infraestructura completa pues trabajaría directamente en la nube.
+
+Por último; sobre los costos, usamos en este caso la suscripción de Google AI Pro para facilitar algunos aspectos como la creación de imágenes con mayor calidad usando NanoBanana Pro, aumentar los límites de uso y usar por más tiempo los modelos más potentes de Google.
+
+
+
+## Identificación de limitaciones
+
+
+
+* **Consistencia exacta de logos y diseños complejos:** Los modelos de imágenes basados en texto pueden interpretar libremente tipografías o logotipos específicos.
+
+
+* **Mitigación:** Para el alcance de este proyecto, el objetivo es enfocarnos en partes esenciales de las prendas como la caída de la tela, la paleta de colores y la textura del material, utilizando descriptores de peso en los prompts.
+
+
+
+
+* **Consistencia de modelo físico entre tomas:** Variación en los rostros generados al cambiar de escenario.
+
+
+* **Mitigación:** Se utilizarán descripciones detalladas en las variables de entrada para garantizar los menores cambios posibles a lo largo del proyecto.
+
+
+## Desarrollo de la Propuesta de Solución
 
 
 La solución se compone por dos fases integradas, un modelo de Lenguaje (texto-texto) que actúa como director de arte y estratega, y un modelo de difusión (texto-imagen) que actúa como un estudio fotográfico.
@@ -183,143 +316,6 @@ Editorial streetwear lifestyle photography of a young man wearing an oversized o
 ```
 
 
-
-## Justificación de la viabilidad del proyecto
-
-
-
-Con las herramientas con las que se cuentan actualmente se puede crear un primer MCP que más adelante pueda evolucionar a una app completa si se quisiera.
-
-Asimismo, el tiempo de ejecución podría tomar alrededor de 2 minutos por producto y por cada ficha y no se necesitaría de una infraestructura completa pues trabajaría directamente en la nube.
-
-Por último; sobre los costos, usamos en este caso la suscripción de Google AI Pro para facilitar algunos aspectos como la creación de imágenes con mayor calidad usando NanoBanana Pro, aumentar los límites de uso y usar por más tiempo los modelos más potentes de Google.
-
-
-
-## Identificación de limitaciones
-
-
-
-* **Consistencia exacta de logos y diseños complejos:** Los modelos de imágenes basados en texto pueden interpretar libremente tipografías o logotipos específicos.
-
-
-* **Mitigación:** Para el alcance de este proyecto, el objetivo es enfocarnos en partes esenciales de las prendas como la caída de la tela, la paleta de colores y la textura del material, utilizando descriptores de peso en los prompts.
-
-
-
-
-* **Consistencia de modelo físico entre tomas:** Variación en los rostros generados al cambiar de escenario.
-
-
-* **Mitigación:** Se utilizarán descripciones detalladas en las variables de entrada para garantizar los menores cambios posibles a lo largo del proyecto.
-
-
-
-
-
-
-
-## Objetivos
-
-
-
-### Objetivo General
-
-
-
-Desarrollar una prueba de concepto (POC) en un Jupyter Notebook que demuestre la viabilidad técnica y operativa de automatizar la creación de catálogos comerciales y campañas visuales para marcas de moda emergentes, integrando técnicas como Role Prompting, One/Few-Shot y Meta-Prompting con modelos multimodales (texto-texto y texto-imagen) de forma eficiente y de bajo costo.
-
-### Objetivos específicos
-
-
-
-* **Experimentar y comparar técnicas de prompting:** Evaluar el desempeño entre zero-prompt, one-shot y few-shot prompting para la redacción de fichas comerciales y la construcción de meta-prompts fotográficos.
-
-
-* **Optimizar el consumo de recursos y llamadas a la API:** Diseñar una estructura de prompt que resuelva en una sola consulta la ficha descriptiva y los dos prompts de imagen (catálogo de estudio y campaña editorial), reduciendo el gasto de tokens.
-
-
-* **Validar la integración multimodal:** Documentar los resultados visuales obtenidos a partir de los meta-prompts en el motor de imagen, comprobando los detalles de los productos en la imagen como la caída del textil, la iluminación, el ambiente, etc.
-
-
-
-
-
-## Metodología
-
-
-
-El proyecto se desarrollará a través de cuatro etapas:
-
-* **Etapa 1: Recopilación y organización de los datos de la prenda**
-
-Se definen los datos clave que describen el producto como el tipo de prenda, composición, color, estilo visual de la marca, etc.
-
-
-* **Etapa 2: Pruebas y generación con el modelo de texto**
-
-Se estructura el entorno de trabajo en Python dentro del Jupyter Notebook.
-
-
-Configuramos el modelo de lenguaje asignándole el rol de director de arte.
-
-
-Hacemos pruebas comparando los tipos de prompts como Zero-Shot, One-Shot y Few-Shot con el fin de identificar cuál obtiene mayor precisión en el texto comercial y los prompts de fotografía en inglés (iluminación, tipo de plano).
-
-
-* **Etapa 3: Creación de las imágenes con la IA visual**
-
-Los prompts obtenidos del modelo de texto se introducen en la herramienta de generación de imágenes (en este caso de Nano Banana).
-
-
-Obtenemos dos resultados visuales: la foto limpia de catálogo con fondo blanco y la foto editorial ambientada en la calle.
-
-
-* **Etapa 4: Revisión de calidad, tiempos y costos**
-
-Evaluamos las imágenes y los textos para ver que cumplan con la estética esperada, midiendo también el tiempo total y el consumo de consultas y tokens para estar seguros de que el proceso es rentable y más eficiente para la empresa pequeña.
-
-
-
-
-
-## 4. Herramientas y Tecnologías
-
-
-
-### Técnicas de Prompting Utilizadas y su Justificación
-
-
-
-* **Role Prompting:** Le asignamos a la IA el rol de director de arte y especialista en prompts para moda. Esto ayuda a que el modelo se ponga en contexto y utilice un tono llamativo para vender la prenda usando los términos adecuados de fotografía (como tipos de lentes, luces y texturas de la tela).
-
-
-* **Meta-Prompting:** La IA de texto no solo escribe la descripción de la prenda, sino que crea el prompt detallado en inglés que necesita la IA de imagen para hacer las fotos. De esta manera, el usuario no tiene que inventar configuraciones de cámara complejas, ya que el modelo las crea automáticamente.
-
-
-* **Zero-Shot Prompting:** Consiste en pedirle al modelo que genere la ficha y los prompts de imagen dándole únicamente las instrucciones y los datos de la prenda, sin mostrarle ningún ejemplo. Esto sirve para conocer la capacidad de la IA y ver qué tan bien responde.
-
-
-* **One-Shot y Few-Shot Prompting:** Aquí le mostramos a la IA uno o varios ejemplos resueltos del mismo mensaje. Al ver un ejemplo de cómo debe quedar el texto y los prompts, el modelo entiende mejor el formato que esperamos y comete menos errores.
-
-
-
-### Herramientas y Programas Utilizados
-
-
-
-* **Python y Jupyter Notebook:** Es el entorno donde organizamos todo el proyecto. Permite mezclar explicaciones escritas, bloques de código que se pueden ejecutar y las imágenes generadas para que cualquier persona pueda revisar el funcionamiento paso a paso.
-
-
-* **Gemini 3.7 flash y 3.1 pro:** Son los modelos de texto que procesan la información de la prenda, redactan la ficha comercial y arman los prompts fotográficos en inglés de manera rápida.
-
-
-* **Google Nano Banana:** Es la herramienta visual que toma los textos en inglés generados por el modelo de lenguaje y crea las imágenes finales entregando la foto limpia de catálogo con fondo blanco y la foto de campaña en la calle.
-
-
-
-
-
 ## Implementación:
 
 
@@ -327,9 +323,46 @@ Evaluamos las imágenes y los textos para ver que cumplan con la estética esper
 La implementación con la explicación se encuentra en el archivo `entrega2_fast_prompting.ipynb`.
 
 
+## Resultados:
+
+La implementación de la prueba de concepto validó el flujo integral de catalogación automatizada a partir de una única fotografía testigo, una chaqueta de jean clásica en un gancho convencional. A través de la técnica Few-Shot, el modelo multimodal extrajo con exactitud las propiedades físicas del textil (denim rígido con lavado índigo medio), los elementos funcionales de patronaje (bolsillos de parche con solapa y bolsillos de ojal laterales) y los acabados de confección (costuras contrastadas en tono tabaco y botones metálicos de vástago).
+
+**Ficha Comercial Generada**
+
+El sistema redactó una descripción persuasiva y técnica orientada a plataformas de e-commerce en español, destacando los atributos estructurales y de usabilidad identificados en la prenda:
+
+"Esta icónica chaqueta vaquera estilo trucker está confeccionada en denim rígido de alta resistencia con un lavado índigo medio de carácter atemporal. Su diseño clásico de silueta regular presenta costuras de contraste en tono tabaco que realzan su estructura robusta y herencia utilitaria. Equipada con dos bolsillos de solapa con botón en el pecho, bolsillos laterales de ojal y botones metálicos grabados, esta prenda ofrece una versatilidad inigualable para el uso diario. El fit estructurado se amolda al cuerpo con el uso, convirtiéndola en una pieza duradera e indispensable para cualquier fondo de armario masculino de transición. La pieza integra tejido denim de algodón pesado de alta durabilidad, costuras reforzadas en hilo color tabaco con botones metálicos plateados, y almacenamiento funcional mediante doble bolsillo frontal y bolsillos laterales de ojal."
+
+**Fotografía de Catálogo E-commerce (Estudio)**
+
+Para la línea de producto de catálogo, se utilizó el meta-prompt derivado en inglés enfocado en iluminación difusa y fidelidad textil en estudio:
+
+_Commercial studio fashion photography of a young athletic man with short wavy hair and a neutral, modern expression, wearing a classic medium-dark indigo wash denim trucker jacket with contrast tobacco stitching and silver metal shank buttons. Seamless pure white background (#FFFFFF), professional three-point softbox lighting, even diffused light without harsh shadows. Shot with an 85mm telephoto portrait lens, f/8 aperture, pin-sharp textile weave and stitch details, clean commercial lookbook style --ar 4:5_
+
+**Resultado de la imagen:** En el imagen resultante se observa una traslación visual exacta de las directrices del prompt. El modelo viste la chaqueta manteniendo las proporciones, textura y caídas de la prenda. La iluminación de tres puntos y el fondo blanco cumplen con las instrucciones visuales y las normas de los catálogos digitales de alta gama, permitiendo apreciar el grosor del tejido sin sombras duras ni artefactos visuales.
+
+**Campaña Editorial Urbana (Lifestyle)**
+
+Para la vertiente publicitaria, el meta-prompt situó la misma chaqueta en un entorno arquitectónico contemporáneo con luz de tarde lluviosa:
+
+_Editorial lifestyle fashion photography of a young athletic man with short wavy hair and a neutral expression, wearing a classic medium-dark indigo wash denim trucker jacket. The model is standing on a wet pedestrian walkway in front of a modern concrete museum with large glass windows after a light rain. Reflections on the damp pavement, natural overcast afternoon light, soft diffused daylight. Shot with a 50mm lens, f/2.8, cinematic composition, realistic denim texture, candid posture --ar 16:9_
+
+La imagen final reproduce la textura del hormigón del museo, los ventanales y los reflejos del pavimento mojado. La luz natural interactúa de forma realista con el denim de la chaqueta, logrando una buena estética de forma orgánica.
+
+**Evaluación y Justificación de la Solución**
+
+La implementación alcanza la solución esperada. Se demostró que una marca emergente puede prescindir de la logística de alquiler de estudios, contratación de modelos y equipos fotográficos de alta gama, reemplazándolos por un flujo asistido por IA que tarda menos tiempo en operar.
+
+La consistencia física de la prenda entre la foto original en el gancho, la imagen generada tipo estudio y imagen de tipo toma exterior confirma la IA de Gemini con preserva la identidad del producto, resolviendo la brecha de calidad y presupuesto en el comercio electrónico de moda.
 
 ## Conclusión:
 
+El desarrollo de esta prueba de concepto demostró la viabilidad técnica de sustituir las producciones fotográficas físicas por un flujo asistido por inteligencia artificial. Se cumplió el objetivo de abaratar y optimizar el acceso a catálogos de alta calidad para marcas emergentes de moda, reduciendo drásticamente los tiempos de producción de semanas a escasos minutos por prenda y eliminando los elevados costos de estudio y modelos.
 
+En cuanto a las técnicas de prompt engineering, la estrategia Few shot prompting superó con claridad a las aproximaciones Zero-prompt y One-Shot. La inclusión de ejemplos diversos permitió que Gemini extrajera con precisión las propiedades del textil, traduciéndolas a parámetros de fotografía exactos como la iluminación y encuadre. Asimismo, la arquitectura de consulta única optimizó el consumo de tokens y llamadas a la API, entregando la ficha en español y los dos meta-prompts en inglés en una sola ejecución.
 
-Este proyecto nos ayuda a entender que con un prompt bien estructurado no es necesario complicarse ni gastar recursos de más pues en lugar de hacer varias iteraciones y prueba-error, la IA logra analizar la foto de la prenda, redactar la descripción de la ficha comercial y armar los dos prompts fotográficos en una sola consulta. Así nos ahorramos llamadas innecesarias a la API, evitamos bloqueos de uso y conseguimos un resultado listo para publicar.
+No obstante, si bien el producto funciona y entrega un resultado visual comercialmente competitivo, todavía enfrenta barreras de costos para operar con total autonomía. En la actualidad, los únicos modelos accesibles de forma gratuita mediante API (solo productos de Google) corresponden a arquitecturas de lenguaje texto a texto, mientras que las APIs comerciales de generación de imagen como Nano Banana de Google requieren comprar créditos adicionales a la suscripción PRO. Esta limitación económica fragmenta el flujo de trabajo, obligando al usuario a copiar y pegar manualmente los prompts desde el cuaderno hacia la herramienta de generación visual, lo que vuelve la tarea más lenta y engorrosa en comparación con un ecosistema automatizado de extremo a extremo en un solo lugar.
+
+También, aunque se use una cuenta pro para este experimento, los llamados de las API a la IA generativa de texto a texto son limitadas (apenas unas cuantas llamadas por día) lo que pausa el flujo de trabajo si no se compran créditos adicionales.
+
+Pese a estas limitaciones en la integración final, el proyecto valida la hipótesis central, el meta-prompting técnico multimodal resuelve el problema creativo y de diseño en la industria textil emergente, dejando una base estructural para cuando las herramientas de generación de imagen y de texto por API resulten económicamente más accesibles para su integración nativa y para un flujo de tareas continuo y sin pausas.
